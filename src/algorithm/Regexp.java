@@ -19,9 +19,14 @@ public class Regexp {
 		//String input = "^[A-Za-z][A-Za-z_0-9]+$";
 		
 		//url
-		String url = "www.hao123.com";
-		String input = "^((http|https)://)?([\\w]+\\.)+[\\w]+(/[\\w./?%&=]*)?$";
-        regfun(input,url);
+		//String url = "www.hao123.com";
+		//String input = "^((http|https)://)?([\\w]+\\.)+[\\w]+(/[\\w./?%&=]*)?$";
+        
+		//身份证号码
+		String id = "612401198806514580";
+		String input = "^(\\d{6})(18|19|20)?(\\d{2})([01]\\d{1})(\\d{1})([0123]\\d)(\\d{3})(\\d|X|x)?$";
+		
+		regfun(input,id);
 	}
 	
 	

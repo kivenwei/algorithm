@@ -33,6 +33,52 @@ public class TestGraph {
 		
 	}
 	
+	private  int firstVertex(int v){
+		if(v < 0 || v > (vertexs.length -1)){
+			return -1;
+		}
+		for(int i = 0; i < vertexs.length; i++){
+			if(medges[v][i] == 1){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	private int nextVertex(int v, int w){
+		if(v < 0 || v > (vertexs.length -1) || w < 0 || w > (vertexs.length -1)){
+			return -1;
+		}
+		for(int i = w + 1; i < vertexs.length; i++){
+			if(medges[v][i] == 1){
+				return i;
+			}
+			
+		}
+		return -1;
+	}
+	
+	private void DFS(int i, boolean[] visited){
+		visited[i] = true;
+        System.out.printf("%c ", vertexs[i]);
+        for (int w = firstVertex(i); w >= 0; w = nextVertex(i, w)) {
+            if (!visited[w])
+                DFS(w, visited);
+        }
+	}
+	
+	public void DFS(){
+		boolean[] visited = new boolean[vertexs.length];  
+		for (int i = 0; i < vertexs.length; i++)
+            visited[i] = false;
+		System.out.printf("DFS: ");
+        for (int i = 0; i < vertexs.length; i++) {
+            if (!visited[i])
+                DFS(i, visited);
+        }
+        System.out.printf("\n");
+	}
+	
 	public void print(){
 		for(int i = 0; i < vertexs.length; i++){
 			for(int j = 0; j < vertexs.length; j++){
@@ -58,6 +104,7 @@ public class TestGraph {
         };
         TestGraph pG = new TestGraph(vexs,edges);
         pG.print();
+        pG.DFS();
 	}
 
 }

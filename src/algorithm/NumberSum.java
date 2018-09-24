@@ -1,4 +1,4 @@
-package com.lintcode;
+package algorithm;
 
 public class NumberSum {
 

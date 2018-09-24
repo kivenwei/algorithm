@@ -1,4 +1,4 @@
-package com.lintcode;
+package algorithm; 
 
 import org.omg.CORBA.WCharSeqHelper;
 

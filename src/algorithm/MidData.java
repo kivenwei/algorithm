@@ -1,4 +1,4 @@
-package com.agrith;
+package algorithm;
 
 public class MidData {
 
